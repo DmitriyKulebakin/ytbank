@@ -1,7 +1,5 @@
 package sindat.pets.ytbank.services.serviceLayerObjects
 
-import sindat.pets.ytbank.Gender
-import sindat.pets.ytbank.Permission
 import java.time.LocalDate
 
 data class SimpleUser(

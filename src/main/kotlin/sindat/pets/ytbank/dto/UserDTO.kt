@@ -1,7 +1,7 @@
 package sindat.pets.ytbank.dto
 
 
-data class SimpleUser(
+data class UserDTO(
     val id: String,
     val username: String,
     val email: String,

@@ -6,6 +6,7 @@ import org.springframework.web.bind.annotation.GetMapping
 import org.springframework.web.bind.annotation.PathVariable
 import org.springframework.web.bind.annotation.RequestMapping
 import org.springframework.web.bind.annotation.RestController
+import sindat.pets.ytbank.dto.UserDTO
 import sindat.pets.ytbank.services.UserService
 
 @RestController
@@ -16,10 +17,10 @@ class UserController(
     private val log = LoggerFactory.getLogger(javaClass)
 
     @GetMapping("/{id}")
-    fun getUserById(@PathVariable("id") userId: Long): User {
+    fun getUserById(@PathVariable("id") userId: Long): UserDTO {
         log.info("getting user by id: $userId")
-        
-        TODO();
+        val user = userService.getUserById(userId)
+        return user
     }
 
     fun createUser(userId: Long): User {

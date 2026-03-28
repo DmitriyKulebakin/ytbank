@@ -18,6 +18,7 @@ class UserController(
     @GetMapping("/{id}")
     fun getUserById(@PathVariable("id") userId: Long): User {
         log.info("getting user by id: $userId")
+        
         TODO();
     }
 

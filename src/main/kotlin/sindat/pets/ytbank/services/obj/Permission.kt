@@ -1,4 +1,4 @@
-package sindat.pets.ytbank.services.serviceLayerObjects
+package sindat.pets.ytbank.services.obj
 
 enum class Permission {
     UNAUTHORIZED,

@@ -1,4 +1,4 @@
-package sindat.pets.ytbank.services.obj
+package sindat.pets.ytbank.controllers.dto
 
 enum class Gender {
     MALE,

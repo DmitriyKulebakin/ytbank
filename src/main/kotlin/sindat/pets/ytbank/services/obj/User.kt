@@ -11,4 +11,5 @@ data class User(
     var firstSeenDate: LocalDateTime?,
     var lastSeenDate: LocalDateTime?,
     var permissionLevel: Permission,
+    var accountAmount: Long,
 )

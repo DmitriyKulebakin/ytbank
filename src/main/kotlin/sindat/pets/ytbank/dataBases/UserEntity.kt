@@ -49,4 +49,8 @@ data class UserEntity(
     @Column(name = "permissions")
     @Enumerated(EnumType.STRING)
     var permissionLevel: Permission,
+
+    @NotNull
+    @Column(name = "account_amount")
+    var accountAmount: Long,
 )

@@ -1,5 +1,6 @@
 package sindat.pets.ytbank.converters
 
+import jakarta.persistence.AttributeConverter
 import jakarta.persistence.Converter
 import org.springframework.stereotype.Service
 import sindat.pets.ytbank.controllers.dto.UserDTO
@@ -7,9 +8,8 @@ import sindat.pets.ytbank.dataBases.UserEntity
 import sindat.pets.ytbank.services.UserService
 import sindat.pets.ytbank.services.obj.User
 
-@Converter
 @Service
-class UserAccountConverter(
+class UserConverter (
     private val userService: UserService
 ) {
 
@@ -23,6 +23,7 @@ class UserAccountConverter(
             lastSeenDate = user.lastSeenDate,
             firstSeenDate = user.firstSeenDate,
             permissionLevel = user.permissionLevel,
+            accountAmount = user.accountAmount,
             )
     }
     fun userEntityToUser(user: UserEntity): User {
@@ -35,6 +36,7 @@ class UserAccountConverter(
             lastSeenDate = user.lastSeenDate,
             firstSeenDate = user.firstSeenDate,
             permissionLevel = user.permissionLevel,
+            accountAmount = user.accountAmount,
         )
     }
     fun userDTOToUser(user: UserDTO): User {

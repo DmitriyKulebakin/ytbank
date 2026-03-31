@@ -1,9 +1,7 @@
-package sindat.pets.ytbank.dataBases
+package sindat.pets.ytbank.users
 
 import org.springframework.data.jpa.repository.JpaRepository
 import org.springframework.stereotype.Repository
-import sindat.pets.ytbank.services.obj.User
-import java.util.Optional
 
 @Repository
 interface UserRepository: JpaRepository<UserEntity, Long> {

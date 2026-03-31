@@ -1,9 +1,8 @@
-package sindat.pets.ytbank.services
+package sindat.pets.ytbank.users
 
 import org.springframework.stereotype.Service
 import org.springframework.transaction.annotation.Transactional
-import sindat.pets.ytbank.controllers.dto.UserDTO
-import sindat.pets.ytbank.services.obj.User
+import sindat.pets.ytbank.users.obj.User
 
 @Service
 class UserService (
@@ -19,12 +18,12 @@ class UserService (
 
 
     @Transactional
-    fun createUser(userDTO: UserDTO): User {
+    fun createUser(userDTO: User): User {
         TODO()
     }
 
     @Transactional
-    fun updateUser(userDTO: UserDTO): User {
+    fun updateUser(userDTO: User): User {
         TODO()
     }
 

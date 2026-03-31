@@ -1,4 +1,4 @@
-package sindat.pets.ytbank.dataBases
+package sindat.pets.ytbank.users
 
 import jakarta.persistence.Column
 import jakarta.persistence.Entity
@@ -10,8 +10,8 @@ import jakarta.persistence.Id
 import jakarta.persistence.Table
 import jakarta.validation.constraints.NotNull
 import jakarta.validation.constraints.Size
-import sindat.pets.ytbank.services.obj.Gender
-import sindat.pets.ytbank.services.obj.Permission
+import sindat.pets.ytbank.users.obj.Gender
+import sindat.pets.ytbank.users.obj.Permission
 import java.time.LocalDateTime
 
 @Table(name = "users")

@@ -1,12 +1,7 @@
-package sindat.pets.ytbank.converters
+package sindat.pets.ytbank.users
 
-import jakarta.persistence.AttributeConverter
-import jakarta.persistence.Converter
 import org.springframework.stereotype.Service
-import sindat.pets.ytbank.controllers.dto.UserDTO
-import sindat.pets.ytbank.dataBases.UserEntity
-import sindat.pets.ytbank.services.UserService
-import sindat.pets.ytbank.services.obj.User
+import sindat.pets.ytbank.users.obj.User
 
 @Service
 class UserConverter (
@@ -39,15 +34,4 @@ class UserConverter (
             accountAmount = user.accountAmount,
         )
     }
-    fun userDTOToUser(user: UserDTO): User {
-        TODO()
-//        return User(
-//            id = user.id
-//        )
-    }
-    fun userToUserDTO(user: User): UserDTO {
-        TODO()
-    }
-
-
 }

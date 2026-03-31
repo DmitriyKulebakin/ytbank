@@ -6,7 +6,7 @@
 //import org.springframework.web.bind.annotation.RequestMapping
 //import org.springframework.web.bind.annotation.RestController
 //import sindat.pets.ytbank.services.AccountService
-//import sindat.pets.ytbank.services.UserService
+//import sindat.pets.ytbank.users.UserService
 //
 //@RestController
 //@RequestMapping("/accounts")

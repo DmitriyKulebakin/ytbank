@@ -4,5 +4,4 @@ class Account (
     var id: Long,
     var amount: Long,
     var ownersId: Long
-) {
-}
+)

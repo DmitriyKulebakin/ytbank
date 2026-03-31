@@ -11,6 +11,7 @@ import jakarta.persistence.Table
 import jakarta.validation.constraints.NotNull
 import jakarta.validation.constraints.Size
 import sindat.pets.ytbank.services.obj.Gender
+import sindat.pets.ytbank.services.obj.Permission
 import java.time.LocalDateTime
 
 @Table(name = "users")
@@ -46,5 +47,6 @@ data class UserEntity(
     var firstSeenDate: LocalDateTime?,
 
     @Column(name = "permissions")
-    var permissionLevel: String?,
+    @Enumerated(EnumType.STRING)
+    var permissionLevel: Permission,
 )

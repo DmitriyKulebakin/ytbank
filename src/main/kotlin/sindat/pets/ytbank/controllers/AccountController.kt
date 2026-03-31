@@ -5,17 +5,23 @@ import org.springframework.web.bind.annotation.GetMapping
 import org.springframework.web.bind.annotation.PathVariable
 import org.springframework.web.bind.annotation.RequestMapping
 import org.springframework.web.bind.annotation.RestController
+import sindat.pets.ytbank.dataBases.AccountEntity
 import sindat.pets.ytbank.dataBases.UserEntity
+import sindat.pets.ytbank.services.AccountService
+import sindat.pets.ytbank.services.UserService
 
 @RestController
 @RequestMapping("/accounts")
-class AccountController {
+class AccountController (
+    private val accountService: AccountService,
+    private val userService: UserService
+) {
     private val log = LoggerFactory.getLogger(javaClass)
 
     @GetMapping("/{id}")
-    fun getAccountById(@PathVariable("id") userId: Long): AccountEntity {
-        log.info("getting user by id: $userId")
-        val user = getUserById(userId)
+    fun getAccountById(@PathVariable("id") accountId: Long): AccountEntity {
+        log.info("getting user by id: $accountId")
+        val user =
         return TODO()
     }
 }

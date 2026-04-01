@@ -1,11 +1,11 @@
 package sindat.pets.ytbank.users
 
 import org.springframework.stereotype.Service
+import sindat.pets.ytbank.users.obj.Permission
 import sindat.pets.ytbank.users.obj.User
 
 @Service
-class UserConverter (
-    private val userService: UserService
+class UserConverter(
 ) {
 
     fun userToUserEntity(user: User): UserEntity {
@@ -17,10 +17,11 @@ class UserConverter (
             gender = user.gender,
             lastSeenDate = user.lastSeenDate,
             firstSeenDate = user.firstSeenDate,
-            permissionLevel = user.permissionLevel,
+            permissionLevel = user.permissionLevel?: Permission.UNAUTHORIZED,
             accountAmount = user.accountAmount,
-            )
+        )
     }
+
     fun userEntityToUser(user: UserEntity): User {
         return User(
             id = user.id,

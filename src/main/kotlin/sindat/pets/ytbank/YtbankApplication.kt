@@ -7,5 +7,5 @@ import org.springframework.boot.runApplication
 class YtbankApplication
 
 fun main(args: Array<String>) {
-	runApplication<YtbankApplication>(*args)
+    runApplication<YtbankApplication>(*args)
 }

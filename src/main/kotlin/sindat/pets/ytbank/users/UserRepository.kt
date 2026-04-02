@@ -9,11 +9,13 @@ import java.util.Optional
 @Repository
 interface UserRepository : JpaRepository<UserEntity, Long> {
 
-    @Query("""
+    @Query(
+        """
         select u from UserEntity u 
         where u.username = :username 
         and u.passwordHash = :passwordHash
-        """)
+        """
+    )
     fun findByUsernameAndPasswordHash(
         @Param("username") username: String,
         @Param("passwordHash") passwordHash: String

@@ -5,8 +5,7 @@ import sindat.pets.ytbank.users.obj.Permission
 import sindat.pets.ytbank.users.obj.User
 
 @Service
-class UserConverter(
-) {
+class UserConverter {
 
     fun userToUserEntity(user: User): UserEntity {
         return UserEntity(
@@ -17,7 +16,7 @@ class UserConverter(
             gender = user.gender,
             lastSeenDate = user.lastSeenDate,
             firstSeenDate = user.firstSeenDate,
-            permissionLevel = user.permissionLevel?: Permission.UNAUTHORIZED,
+            permissionLevel = user.permissionLevel ?: Permission.UNAUTHORIZED,
             accountAmount = user.accountAmount,
         )
     }

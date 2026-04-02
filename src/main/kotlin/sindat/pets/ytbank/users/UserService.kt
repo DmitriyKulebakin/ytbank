@@ -2,7 +2,8 @@ package sindat.pets.ytbank.users
 
 import org.springframework.stereotype.Service
 import org.springframework.transaction.annotation.Transactional
-import sindat.pets.ytbank.users.obj.AuthenticationException
+import sindat.pets.ytbank.exceptionsHandler.exceptions.AuthenticationException
+import sindat.pets.ytbank.security.PermissionService
 import sindat.pets.ytbank.users.obj.Permission
 import sindat.pets.ytbank.users.obj.User
 

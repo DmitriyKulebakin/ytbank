@@ -6,14 +6,14 @@ import org.springframework.web.bind.annotation.PathVariable
 import org.springframework.web.bind.annotation.PostMapping
 import org.springframework.web.bind.annotation.RequestMapping
 import org.springframework.web.bind.annotation.RestController
+import sindat.pets.ytbank.security.PasswordHasher
 import sindat.pets.ytbank.users.obj.User
-import javax.print.attribute.standard.RequestingUserName
 
 @RestController
 @RequestMapping("/users")
 class UserController(
-    private final val userService: UserService,
-    private final val userConverter: UserConverter
+    private val userService: UserService,
+    private val passwordHasher: PasswordHasher
 ) {
     private val log = LoggerFactory.getLogger(javaClass)
 
@@ -25,10 +25,11 @@ class UserController(
     }
 
     @PostMapping
-    fun createUser(userName: RequestingUserName, password: String) {
-        log.info("creating user with name: $userName and password: $password") //TODO LOGGING PASSWORD!! DELETE ON RELEASE!!! think !HOW! and !WHERE! to hash password
-//        userService.createUser()
-        //TODO("")
+    fun createUser(user: User): User { //TODO USER-END HASHING PASSWORD?
+        log.info("creating user with name: ${user.username} and password: ${user.passwordHash}")
+        user.passwordHash = passwordHasher.hashPassword(user.passwordHash)
+        log.info("user with name: ${user.username} and hashed password: ${user.passwordHash} is up to create")
+        return userService.createUser(user)
     }
 
 //    @PostMapping("/login")

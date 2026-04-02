@@ -1,4 +1,4 @@
-package sindat.pets.ytbank.users
+package sindat.pets.ytbank.security
 
 import org.springframework.stereotype.Component
 import sindat.pets.ytbank.users.obj.Permission

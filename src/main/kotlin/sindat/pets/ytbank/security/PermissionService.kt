@@ -3,7 +3,7 @@ package sindat.pets.ytbank.security
 import org.springframework.dao.PermissionDeniedDataAccessException
 import org.springframework.stereotype.Service
 import sindat.pets.ytbank.exceptionsHandler.exceptions.AccessDeniedException
-import sindat.pets.ytbank.users.UserEntity
+import sindat.pets.ytbank.users.obj.UserEntity
 import sindat.pets.ytbank.users.obj.Permission
 
 @Service

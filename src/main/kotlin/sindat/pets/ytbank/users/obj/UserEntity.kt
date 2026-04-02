@@ -1,4 +1,4 @@
-package sindat.pets.ytbank.users
+package sindat.pets.ytbank.users.obj
 
 import jakarta.persistence.Column
 import jakarta.persistence.Entity
@@ -7,11 +7,10 @@ import jakarta.persistence.Enumerated
 import jakarta.persistence.GeneratedValue
 import jakarta.persistence.GenerationType
 import jakarta.persistence.Id
+import jakarta.persistence.OneToMany
 import jakarta.persistence.Table
-import jakarta.validation.constraints.NotNull
-import jakarta.validation.constraints.Size
-import sindat.pets.ytbank.users.obj.Gender
-import sindat.pets.ytbank.users.obj.Permission
+import sindat.pets.ytbank.payment.Account
+import sindat.pets.ytbank.payment.AccountEntity
 import java.time.LocalDateTime
 
 @Table(name = "users")
@@ -20,21 +19,18 @@ data class UserEntity(
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "id")
-    var id: Long,
+    var id: Long?,
 
-    @NotNull
     @Column(name = "username")
     var username: String,
 
-    @NotNull
     @Column(name = "password_hash")
-    @Size(min = 60, max = 255)
+    // @Size(min = 60, max = 255) todo any regulation method?
     var passwordHash: String,
 
     @Column(name = "email")
     var email: String?,
 
-    @NotNull
     @Enumerated(EnumType.STRING)
     @Column(name = "gender")
     var gender: Gender,
@@ -50,7 +46,9 @@ data class UserEntity(
     @Enumerated(EnumType.STRING)
     var permissionLevel: Permission,
 
-    @NotNull
-    @Column(name = "account_amount")
-    var accountAmount: Long,
+//    @Column(name = "account_amount") todo deprecate method
+//    var accountAmount: Long,
+
+    @OneToMany(mappedBy = "owner")
+    var accounts: Set<AccountEntity>,
 )

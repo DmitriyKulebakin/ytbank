@@ -3,6 +3,7 @@ package sindat.pets.ytbank.users
 import org.springframework.stereotype.Service
 import sindat.pets.ytbank.users.obj.Permission
 import sindat.pets.ytbank.users.obj.User
+import sindat.pets.ytbank.users.obj.UserEntity
 
 @Service
 class UserConverter {
@@ -17,7 +18,7 @@ class UserConverter {
             lastSeenDate = user.lastSeenDate,
             firstSeenDate = user.firstSeenDate,
             permissionLevel = user.permissionLevel ?: Permission.UNAUTHORIZED,
-            accountAmount = user.accountAmount,
+            accounts = user.accounts,
         )
     }
 
@@ -31,7 +32,7 @@ class UserConverter {
             lastSeenDate = user.lastSeenDate,
             firstSeenDate = user.firstSeenDate,
             permissionLevel = user.permissionLevel,
-            accountAmount = user.accountAmount,
+            accounts = user.accounts,
         )
     }
 }

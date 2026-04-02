@@ -1,3 +1,3 @@
 package sindat.pets.ytbank.exceptionsHandler.exceptions
 
-class AccessDeniedException : IllegalAccessException("Access denied")
+class AccessDeniedException(message: String = "Access denied") : IllegalAccessException(message)

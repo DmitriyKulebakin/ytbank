@@ -1,3 +1,3 @@
 package sindat.pets.ytbank.exceptionsHandler.exceptions
 
-class AuthenticationException : IllegalStateException("Authentication error")
+class AuthenticationException(message: String = "Authentication error") : IllegalStateException(message)
